@@ -9,5 +9,3 @@ RUN apt-get update && \
 ENV LC_ALL ja_JP.UTF-8
 
 COPY ./my.cnf /etc/mysql/conf.d/my.cnf
-COPY ./0-schema.sql /docker-entrypoint-initdb.d
-COPY ./1-isucon8q-initial-dataset.sql.gz /docker-entrypoint-initdb.d
