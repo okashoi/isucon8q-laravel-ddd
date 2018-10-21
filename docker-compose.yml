@@ -46,17 +46,6 @@ services:
       DB_USERNAME: "${MYSQL_USER}"
       DB_PASSWORD: "${MYSQL_PASSWORD}"
 
-  node:
-    build:
-      context: ./services/node
-      args:
-        USER_ID: "${USER_ID}"
-        GROUP_ID: "${GROUP_ID}"
-    volumes:
-      - ./src:/var/www/app
-    env_file:
-      - ./.env
-
   database:
     build:
       context: ./services/database

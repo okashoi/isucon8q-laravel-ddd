@@ -60,12 +60,3 @@ make composer CMD=<subcommand>
 # example: install php dependencies
 make composer CMD=install
 ```
-
-### Execute npm
-
-```bash
-make npm CMD=<subcommand>
-
-# example: install javascript dependencies
-make npm CMD=install
-```
