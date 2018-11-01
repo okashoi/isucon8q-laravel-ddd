@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Torb\Infrastructure\Eloquents\User::class, function (Faker $faker) {
+$factory->define(Torb\Infrastructure\Eloquents\Administrator::class, function (Faker $faker) {
     return [
         'nickname'   => $faker->name,
         'login_name' => $faker->unique()->userName,
