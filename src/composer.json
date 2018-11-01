@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "okashoi/isucon8q-laravel-ddd",
+    "description": "Implementation of ISUCON 8 qualifier application with PHP 7.2 + Laravel 5.7 & layered architecture pattern.",
+    "keywords": ["laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -24,7 +24,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "Core\\": "core/",
+            "Torb\\": "app/"
         }
     },
     "autoload-dev": {
