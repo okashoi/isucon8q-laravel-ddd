@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/okashoi/isucon8q-laravel-ddd.svg?style=svg)](https://circleci.com/gh/okashoi/isucon8q-laravel-ddd)
+
 # [WIP] isucon8q-laravel-ddd
 
 This repository is an implementation of [ISUCON 8 qualifier application](https://github.com/isucon/isucon8-qualify) with PHP 7.2 + Laravel 5.7 & layered architecture pattern.
