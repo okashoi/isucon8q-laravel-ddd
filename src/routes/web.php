@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/initialize', function () {
-    exec(database_path('init.sh'));
-
-    return response(null, 204);
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/initialize', 'Initialize');
+Route::get('/', 'Front\ShowPage');
+Route::get('/admin', 'Admin\ShowPage');

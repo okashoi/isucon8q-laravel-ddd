@@ -16,11 +16,10 @@ use Illuminate\Http\Request;
 Route::post('actions/login',  'AuthController@login');
 Route::post('actions/logout', 'AuthController@logout');
 
-Route::get('users/{id}', 'UserController@show');
-Route::post('users',     'UserController@store');
+Route::get('events',                    'EventController@index');
+Route::get('events/{id}',               'EventController@show');
+Route::post('events',                   'EventController@store');
+Route::post('events/{id}/actions/edit', 'EventController@update');
 
-Route::get('events',                       'EventController@index');
-Route::get('events/{id}',                  'EventController@show');
-Route::post('events/{id}/actions/reserve', 'EventController@reserve');
-Route::delete('events/{id}/sheets/{rank}/{num}/reservation',
-                                           'EventController@cancelReservation');
+Route::get('reports/events/{id}/sales', 'ReportController@export');
+Route::get('reports/sales',             'ReportController@exportAll');
