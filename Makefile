@@ -1,6 +1,6 @@
 PHP  := docker-compose exec php-cli
 
-.PHONY: setup up down artisan artisan/* composer
+.PHONY: setup up down artisan artisan/* composer lint/*
 
 .env:
 	cp .env.example .env
@@ -27,3 +27,12 @@ artisan/ide-helper/model: src/.env
 
 composer:
 	$(PHP) composer $(CMD)
+
+lint/cs:
+	$(PHP) make lint/cs
+
+lint/cbf:
+	$(PHP) make lint/cbf
+
+lint/md:
+	$(PHP) make lint/md

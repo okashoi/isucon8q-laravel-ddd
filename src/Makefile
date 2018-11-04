@@ -1,7 +1,16 @@
-.PHONY: ide-helper/model
+.PHONY: ide-helper/model lint/*
 
 vendor/%:
 	composer install
 
 ide-helper/model: vendor/barryvdh/laravel-ide-helper
 	php artisan ide-helper:model --write --reset
+
+lint/cs: vendor/bin/phpcs
+	./vendor/bin/phpcs -n --colors --standard="./phpcs.xml" --encoding="utf-8" app/ core/ tests/
+
+lint/cbf: vendor/bin/phpcbf
+	./vendor/bin/phpcbf --standard="./phpcs.xml" --encoding="utf-8" app/ core/ tests/
+
+lint/md: vendor/bin/phpmd
+	./vendor/bin/phpmd app/ text phpmd.xml
