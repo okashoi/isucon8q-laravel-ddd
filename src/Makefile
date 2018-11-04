@@ -14,3 +14,6 @@ lint/cbf: vendor/bin/phpcbf
 
 lint/md: vendor/bin/phpmd
 	./vendor/bin/phpmd app/ text phpmd.xml
+
+lint/stan: vendor/nunomaduro/larastan
+	php artisan code:analyse --level=max --paths=app,core,tests

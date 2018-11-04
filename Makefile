@@ -36,3 +36,6 @@ lint/cbf:
 
 lint/md:
 	$(PHP) make lint/md
+
+lint/stan:
+	$(PHP) make lint/stan
