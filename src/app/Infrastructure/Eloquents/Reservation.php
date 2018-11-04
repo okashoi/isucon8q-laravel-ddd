@@ -7,8 +7,29 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Reservation
- * @package Torb\Infrastructure\Eloquents
+ * Torb\Infrastructure\Eloquents\Reservation
+ *
+ * @property int $id
+ * @property int $event_id
+ * @property int $sheet_id
+ * @property int $user_id
+ * @property string $reserved_at
+ * @property string|null $canceled_at
+ * @property-read \Torb\Infrastructure\Eloquents\Event $event
+ * @property-read \Torb\Infrastructure\Eloquents\Sheet $sheet
+ * @property-read \Torb\Infrastructure\Eloquents\User $user
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\Torb\Infrastructure\Eloquents\Reservation onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Reservation whereCanceledAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Reservation whereEventId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Reservation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Reservation whereReservedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Reservation whereSheetId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Reservation whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Torb\Infrastructure\Eloquents\Reservation withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\Torb\Infrastructure\Eloquents\Reservation withoutTrashed()
+ * @mixin \Eloquent
  */
 class Reservation extends Model
 {

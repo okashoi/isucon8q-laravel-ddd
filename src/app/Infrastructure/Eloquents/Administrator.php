@@ -5,8 +5,17 @@ namespace Torb\Infrastructure\Eloquents;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
- * Class Administrator
- * @package Torb\Infrastructure\Eloquents
+ * Torb\Infrastructure\Eloquents\Administrator
+ *
+ * @property int $id
+ * @property string $nickname
+ * @property string $login_name
+ * @property string $pass_hash
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Administrator whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Administrator whereLoginName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Administrator whereNickname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Administrator wherePassHash($value)
+ * @mixin \Eloquent
  */
 class Administrator extends Authenticatable
 {

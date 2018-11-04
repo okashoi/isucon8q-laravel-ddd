@@ -7,8 +7,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * Class User
- * @package Torb\Infrastructure\Eloquents
+ * Torb\Infrastructure\Eloquents\User
+ *
+ * @property int $id
+ * @property string $nickname
+ * @property string $login_name
+ * @property string $pass_hash
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Torb\Infrastructure\Eloquents\Reservation[] $reservations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Torb\Infrastructure\Eloquents\Event[] $reservedEvents
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\User whereLoginName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\User whereNickname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\User wherePassHash($value)
+ * @mixin \Eloquent
  */
 class User extends Authenticatable
 {

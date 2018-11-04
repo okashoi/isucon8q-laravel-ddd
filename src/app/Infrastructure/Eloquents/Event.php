@@ -7,8 +7,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * Class Event
- * @package Torb\Infrastructure\Eloquents
+ * Torb\Infrastructure\Eloquents\Event
+ *
+ * @property int $id
+ * @property string $title
+ * @property int $public_fg
+ * @property int $closed_fg
+ * @property int $price
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Torb\Infrastructure\Eloquents\User[] $attendees
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Torb\Infrastructure\Eloquents\Reservation[] $reservations
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Event whereClosedFg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Event whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Event wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Event wherePublicFg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Torb\Infrastructure\Eloquents\Event whereTitle($value)
+ * @mixin \Eloquent
  */
 class Event extends Model
 {
