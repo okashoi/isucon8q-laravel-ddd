@@ -1,4 +1,4 @@
-.PHONY: ide-helper/model lint/*
+.PHONY: ide-helper/model lint/* test coverage/*
 
 vendor/%:
 	composer install
@@ -17,3 +17,14 @@ lint/md: vendor/bin/phpmd
 
 lint/stan: vendor/nunomaduro/larastan
 	php artisan code:analyse --level=max --paths=app,core,tests
+
+test: vendor/bin/phpunit
+	./vendor/bin/phpunit
+
+coverage/text: vendor/bin/phpunit
+	./vendor/bin/phpunit --coverage-text
+
+storage/coverage: vendor/bin/phpunit
+	./vendor/bin/phpunit --coverage-html ./storage/coverage
+
+coverage/html: storage/coverage

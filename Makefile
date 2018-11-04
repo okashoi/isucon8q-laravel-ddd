@@ -1,6 +1,6 @@
 PHP  := docker-compose exec php-cli
 
-.PHONY: setup up down artisan artisan/* composer lint/*
+.PHONY: setup up down artisan artisan/* composer lint/* test coverage/*
 
 .env:
 	cp .env.example .env
@@ -39,3 +39,12 @@ lint/md:
 
 lint/stan:
 	$(PHP) make lint/stan
+
+test:
+	$(PHP) make test
+
+coverage/text:
+	$(PHP) make coverage/text
+
+coverage/html:
+	$(PHP) make coverage/html
