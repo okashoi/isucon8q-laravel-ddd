@@ -60,3 +60,45 @@ make composer CMD=<subcommand>
 # example: install php dependencies
 make composer CMD=install
 ```
+
+### Run test
+
+```bash
+make test
+```
+
+Show coverage report in plaintext.
+
+```bash
+make coverage/text
+```
+
+Generate coverage report in HTML format.
+
+```bash
+make coverage/html
+```
+
+The report will be generated under the directory `src/storage/coverage`.
+
+### Execute lint tools
+
+```bash
+# PHP CodeSniffer
+make lint/cs
+
+# Autofix some PHP Codesniffer erros (phpcbf)
+make lint/cbf
+
+# PHPMD
+make lint/md
+
+# PHPStan (Larastan)
+make lint/stan
+```
+
+See also:
+
+* [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+* [PHPMD](https://phpmd.org/)
+* [Larastan](https://github.com/nunomaduro/larastan)
