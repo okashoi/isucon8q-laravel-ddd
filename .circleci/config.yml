@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.2-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mysql:9.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "src/composer.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: setup
+          command: |
+            cd src
+            cp .env.ci .env
+            composer install -n --prefer-dist
+
+      - save_cache:
+          paths:
+            - ./src/vendor
+          key: v1-dependencies-{{ checksum "src/composer.json" }}
+
+      - run:
+          name: test
+          command: make -C src test
+
+      - run:
+          name: lint
+          command: |
+            make -C src lint/cs
+            make -C src lint/md
+            make -C src lint/stan
